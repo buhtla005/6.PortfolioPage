@@ -1,0 +1,598 @@
+$colors: (
+     tamna: #3F3236,
+     lj: #fd0054,
+     tlj: #a80038,
+     svjetla: #fbf9fa
+); 
+
+$dot: 35px;
+$project-br: 10px;
+
+
+@function color($color-name){
+     @return map-get($colors, $color-name)
+}
+
+*{
+     margin: 0;
+     padding: 0;
+     font-family: "Roboto";
+     text-decoration: none;
+     box-sizing: border-box;
+     scroll-behavior: smooth;
+}
+
+body{
+     background: color(tamna);
+     mix-blend-mode: normal;
+     height: 200vh;
+}
+
+header{
+     position: fixed;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 10%;
+     background-color: color(tlj);
+
+    .logo-name{
+         flex: 1 20%;
+         cursor: pointer;
+         text-transform: uppercase;
+
+         .white{
+              color: color(svjetla);
+         }
+    }
+
+    #navbar{
+
+     flex: 1 10%;
+
+          .nav__links{
+               width: 100%;
+               list-style: none;
+               display: flex;
+               justify-content: space-evenly;
+
+               a{
+                    transition: all 0.3s ease 0s;
+                    font-weight: 500;
+                    font-size: 1em;
+                    color: color(svjetla);
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    text-align: center;
+               }
+
+               a:hover{
+                    color: color(tamna);
+               }
+
+               .arrow{
+                    visibility: hidden;
+               }
+          }
+     }
+}
+
+@media (max-width:400px){
+     
+     header{
+          bottom: 0;
+          background-color: color(tlj);
+          width: 100%;
+          height: 3em;
+          padding: 0;
+
+          .logo-name{
+               display: none;
+          }
+
+          #navbar{ 
+
+               height: inherit;
+               width: inherit;
+               
+               .nav__links{
+                    height:100%;
+                    width:100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    a{
+                         flex: 1 25%;
+                         height:100%;
+                         padding-top:3%;
+                         justify-self: center;
+                         transition: all 0.3s ease 0s;
+                         font-weight: 400;
+                         font-size: 0.9em;
+                         text-decoration: none;
+                         text-transform: uppercase;
+                         color: color(svjetla);
+
+                    }
+
+                    .arrow{
+                         visibility: visible;
+                    }       
+               }
+          }
+     }
+}
+
+@media (min-width:400px) and (max-width: 800px){
+     header{
+          bottom: 0;
+          background-color: color(tlj);
+          width: 100%;
+          height: 5em;
+          padding: 0;
+          display: flex;
+          justify-content: space-around;
+
+          .logo-name{
+              flex: 1 10%;
+              margin-left: 10%; 
+          }
+
+          #navbar{ 
+               flex: 1 50%;
+               height: inherit;
+               width: inherit;
+               
+               .nav__links{
+                    height:100%;
+                    width:100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    a{
+                         flex: 1 25%;
+                         height:100%;
+                         padding-top:5%;
+                         justify-self: center;
+                         transition: all 0.3s ease 0s;
+                         font-weight: 400;
+                         font-size: 1.4em;
+                         text-decoration: none;
+                         text-transform: uppercase;
+                         color: color(svjetla);
+
+                    }
+
+                    .arrow{
+                         visibility: visible;
+                    }       
+               }
+          }
+     }
+}
+
+/*
+#welcome-section{
+     display: grid;
+     width: 100%;
+     height: 100vh;
+     grid-template-areas:
+     "v v"
+     "t s"
+     "t g";
+     grid-template-columns: 3.6fr .4fr;
+     grid-template-rows: .2fr 2fr 2fr;
+
+     .logo-t1{
+          grid-area: v;
+          width: 210px;
+          height: 56px;
+
+          color: color(tamna);
+          background-color: color(tlj);
+          
+          font-style: normal;
+          font-weight: normal;
+          font-size: 48px;
+          line-height: 56px;
+          letter-spacing: .025em;
+          justify-self: end;
+     }
+
+     .logo-t2{
+          grid-area: s;
+          font-style: normal;
+          font-weight: bold;
+          text-align: center;
+          line-height: 56px;
+          letter-spacing: 0.025em;
+          color: color(svjetla);
+          background-color: color(tlj);
+          font-size: 3em;
+          writing-mode: vertical-lr;
+          letter-spacing: .15em;
+          text-transform: uppercase;
+     }
+
+     .logo-t3{
+          grid-area: g;
+          width:56px;
+          height:267px;
+          color: color(tlj);
+          background-color: color(tamna);
+
+          font-size: 3em;
+          align-items: center;
+          text-align: center;
+          writing-mode: vertical-lr;
+          letter-spacing: .025em;
+          text-transform: uppercase;
+     }
+
+     .building{
+          color: color(svjetla);
+          font-style: normal;
+          font-weight: bold;
+          font-size: 96px;
+          line-height: 100%;
+          text-transform: uppercase;
+          letter-spacing: -0.09em;
+          font-feature-settings: 'kern' off;
+          margin-left: .51em;
+          margin-top: .2em;
+          overflow: hidden;
+
+          .ljslovo{
+               color: color(lj);
+          }
+     }
+
+     .sites{
+          font-style: italic;
+          font-weight: normal;
+          font-size: 2.5em;
+          line-height: auto;
+          text-align: center;
+          letter-spacing: 0.165em;
+          margin-top: 0.5em;
+          color: color(svjetla);
+          text-transform: uppercase;
+     }
+
+     .that{
+          font-style: normal;
+          font-weight: bold;
+          font-size: 2em;
+          line-height: 42px;
+          text-align: center;
+          letter-spacing: 0.025em;
+          color: color(svjetla);
+          margin-top: 1em;
+     }
+
+     .last{
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 5em;
+          line-height: 88px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: color(tamna);
+          -webkit-text-fill-color: color(tamna);
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: color(svjetla);
+          margin-top: .5em;
+          margin-left: .1em;
+          overflow: hidden;
+     }
+
+     .dot{
+          margin-top: -1em;
+          margin-left: 85%;
+          width: $dot;
+          height: $dot;
+          border-radius: 50%;
+          background-color: color(lj);
+          color: color(lj);
+          -webkit-text-fill-color: color(lj);
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: color(svjetla);
+          
+     }
+}
+
+
+#skills, #contact{
+
+     .naslov{
+          @include naslov;
+     }
+
+     .blank{
+          padding-top: 1em;
+     }
+
+     .content{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+
+          .text-in{
+               @include text-in-container;
+               text-align: left;
+               font-size: large;
+
+               span{
+                    color: color(lj);
+               }
+          }
+
+          .box{
+               flex: 1 40%;
+               background-color: color(tlj);
+               margin: 1em;
+               height: 6em;
+               border-radius: 5px;
+
+               & .icon{
+                    text-align: center;
+                    color: color(svjetla);
+                    font-size: 3em;
+               }
+
+               h2{
+                    color: color(svjetla);
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: medium;
+                    font-family: "Montserrat";
+               }     
+          }
+          margin-bottom: 10em;
+     }
+}
+
+#projects{
+
+     .naslov{
+          @include naslov;
+     }
+
+     .project-list{
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .project{
+               margin: auto;
+               margin-top: 1em;
+               width:90%;
+               height: 20em;
+               padding: 1em;
+               background-color: color(svjetla);
+               border-radius: $project-br;
+               text-align: center;
+               
+               img{
+                    width: 90%;
+                    margin-top: $project-br;
+               }
+
+               h2{
+                    color: color(tlj);
+                    text-transform: capitalize;
+               }
+
+               .project-text{
+                    text-align: left;
+               }
+
+               .links{
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 1em;
+                    text-decoration: none;
+
+                    .link,
+                    .link:active,
+                    .link:visited,
+                    .link:hover{
+                         width: 8em;
+                         height: 1.4em;
+                         background-color: color(tlj);
+                         border-radius: $project-br;
+                         text-decoration: none;
+                         color: inherit;
+                         color: color(svjetla);
+                         text-transform: uppercase;
+
+                    }
+               }
+          }
+
+          .projects-text{
+               
+               @include text-in-container;
+
+               a{
+                    color: color(lj);
+                    text-transform: uppercase;
+               }
+          }
+     }
+}
+
+@media (max-width: 800px) and (min-width: 400px){
+
+     $dot: 90px;
+     $project-br: 10px;
+
+     #navbar{
+          height: 3em;
+          font-size: 2em;
+     }
+     
+     #welcome-section{
+
+          grid-template-rows: .3fr 2fr 2fr;
+          
+          .logo-t1{
+               width: 60%;
+               height: 100%;
+               font-size: 4em;
+               text-align: center;
+          }
+
+          .logo-t2{
+               text-align: center;
+               line-height: 1em;
+               font-size: 5em;
+               letter-spacing: .15em;
+               overflow: hidden;
+          }
+     
+          .logo-t3{
+               font-size: 4em;
+               text-align: center;
+               letter-spacing: .15em;
+               line-height: 1em;
+               margin-top: 1em;
+               overflow: hidden;
+          }
+     
+          .building{
+               font-size: 12em;
+               line-height: .8em;
+               overflow: hidden;
+     
+               .ljslovo{
+                    color: color(lj);
+                    font-size: 1.2em;
+               }
+
+               .sp{
+                    display: inline-block;
+                    margin-left: 20%;
+                    overflow: hidden;
+               }
+          }
+     
+          .that{
+               font-size: 3em;
+               overflow: hidden;
+          }
+     
+          .last{
+               font-size: 8em;
+               line-height: 100px;
+               text-align: left;
+               letter-spacing: 0.1em;
+               margin-left: 20%;
+               overflow: hidden;
+          }
+     
+          .dot{
+               width: $dot;
+               height: $dot;
+               border-radius: 50%;
+               background-color: color(lj);
+               color: color(lj);
+               -webkit-text-fill-color: color(lj);
+               -webkit-text-stroke-width: 2px;
+               -webkit-text-stroke-color: color(svjetla);
+               margin-left: 80%;
+               
+          }
+     }
+
+     #skills, #contact{
+
+          .naslov{
+               font-size: 4em;
+          }
+     
+          .blank{
+               padding-top: 1em;
+          }
+     
+          .content{
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: space-around;
+     
+               .text-in{
+                    font-size: x-large;
+               }
+     
+               .box{
+                    flex: 1 25%;
+                    background-color: color(tlj);
+                    margin: 1em;
+                    height: 12em;
+                    border-radius: $project-br;
+     
+                    & .icon{
+                         text-align: center;
+                         color: color(svjetla);
+                         font-size: 6em;
+                    }
+     
+                    h2{
+                         color: color(svjetla);
+                         text-align: center;
+                         font-weight: 400;
+                         font-size: xx-large;
+                         font-family: "Montserrat";
+                    }     
+               }
+               margin-bottom: 15em;
+          }
+     }
+
+     #projects{
+
+          .naslov{
+               font-size: 4em;
+          }
+     
+          .project-list{
+     
+               .project{
+                    height: 34em;
+                    padding: 2em;
+     
+                    h2{
+                         color: color(tlj);
+                         font-size: xx-large;
+                    }
+     
+                    .project-text{
+                         text-align: left;
+                         font-size: x-large;
+                         margin-top: 1em;
+                    }
+     
+                    .links{
+                         .link,
+                         .link:active,
+                         .link:visited,
+                         .link:hover{
+                              font-size: x-large;
+                              width: 8em;
+                              height: 1.6em;
+                         }
+                    }
+               }
+     
+               .projects-text{
+                    font-size: xx-large;
+                    margin-bottom: 5em;
+               }
+          }
+     }
+}*/
