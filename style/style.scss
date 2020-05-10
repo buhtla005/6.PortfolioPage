@@ -1,16 +1,27 @@
 $colors: (
      tamna: #3F3236,
+     tamna-naslov:rgb(82, 64, 69),
      lj: #fd0054,
      tlj: #a80038,
      svjetla: #fbf9fa
 ); 
 
-$dot: 35px;
+$dot: 120px;
 $project-br: 10px;
+$width-main: 60%;
+$height-main: 95%;
 
 
 @function color($color-name){
      @return map-get($colors, $color-name)
+}
+
+@mixin naslov{
+     color: color(tamna-naslov);
+     justify-self: center;
+     text-transform: uppercase;
+     font-size: 10em;
+     margin: .5em;
 }
 
 *{
@@ -25,46 +36,57 @@ $project-br: 10px;
 body{
      background: color(tamna);
      mix-blend-mode: normal;
-     height: 200vh;
+     margin-top:3vh;
 }
 
 header{
+
      position: fixed;
+     top: 0;
+     z-index: 1;
+
      width: 100%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 20px 10%;
+     height: 5em;
      background-color: color(tlj);
 
-    .logo-name{
-         flex: 1 20%;
-         cursor: pointer;
-         text-transform: uppercase;
+     #navbar{
 
-         .white{
-              color: color(svjetla);
-         }
-    }
+     width: inherit;
+     height: inherit;
+     display: flex;
+     justify-content: space-evenly;
 
-    #navbar{
-
-     flex: 1 10%;
+          .logo-name{
+               flex: 3;
+               cursor: pointer;
+               text-transform: uppercase;
+               margin: auto;
+               margin-left: 10%;
+               text-align:left;
+               .white{
+                    color: color(svjetla);
+               }
+          }
 
           .nav__links{
+               flex: 5;
+               margin: auto;
                width: 100%;
                list-style: none;
                display: flex;
-               justify-content: space-evenly;
-
+               justify-items: right;
+               
                a{
+                    flex: 1;
                     transition: all 0.3s ease 0s;
+                    width: auto;
+                    font-size: 1.6em;
                     font-weight: 500;
-                    font-size: 1em;
                     color: color(svjetla);
                     text-decoration: none;
                     text-transform: uppercase;
                     text-align: center;
+                    margin: auto;
                }
 
                a:hover{
@@ -78,276 +100,110 @@ header{
      }
 }
 
-@media (max-width:400px){
-     
-     header{
-          bottom: 0;
-          background-color: color(tlj);
-          width: 100%;
-          height: 3em;
-          padding: 0;
-
-          .logo-name{
-               display: none;
-          }
-
-          #navbar{ 
-
-               height: inherit;
-               width: inherit;
-               
-               .nav__links{
-                    height:100%;
-                    width:100%;
-                    display: flex;
-                    justify-content: space-between;
-
-                    a{
-                         flex: 1 25%;
-                         height:100%;
-                         padding-top:3%;
-                         justify-self: center;
-                         transition: all 0.3s ease 0s;
-                         font-weight: 400;
-                         font-size: 0.9em;
-                         text-decoration: none;
-                         text-transform: uppercase;
-                         color: color(svjetla);
-
-                    }
-
-                    .arrow{
-                         visibility: visible;
-                    }       
-               }
-          }
-     }
-}
-
-@media (min-width:400px) and (max-width: 800px){
-     header{
-          bottom: 0;
-          background-color: color(tlj);
-          width: 100%;
-          height: 5em;
-          padding: 0;
-          display: flex;
-          justify-content: space-around;
-
-          .logo-name{
-              flex: 1 10%;
-              margin-left: 10%; 
-          }
-
-          #navbar{ 
-               flex: 1 50%;
-               height: inherit;
-               width: inherit;
-               
-               .nav__links{
-                    height:100%;
-                    width:100%;
-                    display: flex;
-                    justify-content: space-between;
-
-                    a{
-                         flex: 1 25%;
-                         height:100%;
-                         padding-top:5%;
-                         justify-self: center;
-                         transition: all 0.3s ease 0s;
-                         font-weight: 400;
-                         font-size: 1.4em;
-                         text-decoration: none;
-                         text-transform: uppercase;
-                         color: color(svjetla);
-
-                    }
-
-                    .arrow{
-                         visibility: visible;
-                    }       
-               }
-          }
-     }
-}
-
-/*
 #welcome-section{
-     display: grid;
-     width: 100%;
+
+     background-image: url('https://hcu.org/Resources/1c2a1348-a85f-42eb-aca4-6ba9c2b9b4ef/onlinebanking.jpg');
+     background-size: cover;
+     background-color: color(tamna);
+     background-blend-mode: multiply;
      height: 100vh;
-     grid-template-areas:
-     "v v"
-     "t s"
-     "t g";
-     grid-template-columns: 3.6fr .4fr;
-     grid-template-rows: .2fr 2fr 2fr;
+     display: flex;
 
-     .logo-t1{
-          grid-area: v;
-          width: 210px;
-          height: 56px;
+     .main-block{
+          width: $width-main;
+          height: $height-main;
+          margin: auto;
+          max-width: 80%;
 
-          color: color(tamna);
-          background-color: color(tlj);
-          
-          font-style: normal;
-          font-weight: normal;
-          font-size: 48px;
-          line-height: 56px;
-          letter-spacing: .025em;
-          justify-self: end;
-     }
 
-     .logo-t2{
-          grid-area: s;
-          font-style: normal;
-          font-weight: bold;
-          text-align: center;
-          line-height: 56px;
-          letter-spacing: 0.025em;
-          color: color(svjetla);
-          background-color: color(tlj);
-          font-size: 3em;
-          writing-mode: vertical-lr;
-          letter-spacing: .15em;
-          text-transform: uppercase;
-     }
+          h1{
+               font-size: 10em;
+               color: color(svjetla);
+               text-align: center;
 
-     .logo-t3{
-          grid-area: g;
-          width:56px;
-          height:267px;
-          color: color(tlj);
-          background-color: color(tamna);
+               .bigB{
+                    color: color(lj);
+                    font-size: 2em;
+                    text-transform: uppercase;
+               }
+               
+               .sites{
+                    color: color(lj);
+                    text-align: right;
+               }
 
-          font-size: 3em;
-          align-items: center;
-          text-align: center;
-          writing-mode: vertical-lr;
-          letter-spacing: .025em;
-          text-transform: uppercase;
-     }
+               .that{
+                    font-size: .5em;
+                    text-align: center;
+               }
 
-     .building{
-          color: color(svjetla);
-          font-style: normal;
-          font-weight: bold;
-          font-size: 96px;
-          line-height: 100%;
-          text-transform: uppercase;
-          letter-spacing: -0.09em;
-          font-feature-settings: 'kern' off;
-          margin-left: .51em;
-          margin-top: .2em;
-          overflow: hidden;
+               .outline{
+                    color: color(svjetla);
+                    font-size: 1.2em;
+               }
 
-          .ljslovo{
-               color: color(lj);
+               .dot{
+                    width: $dot;
+                    height: $dot;
+                    border-radius: 50%;
+                    background-color: color(lj);
+                    display: inline-block;
+               }
           }
-     }
-
-     .sites{
-          font-style: italic;
-          font-weight: normal;
-          font-size: 2.5em;
-          line-height: auto;
-          text-align: center;
-          letter-spacing: 0.165em;
-          margin-top: 0.5em;
-          color: color(svjetla);
-          text-transform: uppercase;
-     }
-
-     .that{
-          font-style: normal;
-          font-weight: bold;
-          font-size: 2em;
-          line-height: 42px;
-          text-align: center;
-          letter-spacing: 0.025em;
-          color: color(svjetla);
-          margin-top: 1em;
-     }
-
-     .last{
-          font-family: Montserrat;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 5em;
-          line-height: 88px;
-          text-align: center;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          color: color(tamna);
-          -webkit-text-fill-color: color(tamna);
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: color(svjetla);
-          margin-top: .5em;
-          margin-left: .1em;
-          overflow: hidden;
-     }
-
-     .dot{
-          margin-top: -1em;
-          margin-left: 85%;
-          width: $dot;
-          height: $dot;
-          border-radius: 50%;
-          background-color: color(lj);
-          color: color(lj);
-          -webkit-text-fill-color: color(lj);
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: color(svjetla);
           
+          .hl{
+               height: 5px;
+               width: 100%;
+               background-color: color(lj);
+          }
      }
 }
 
+#ski, #pro, #con{
+     height: 10vh;
+}
 
-#skills, #contact{
+#skills{
+     position: relative;
+     height: 70vh;
 
      .naslov{
           @include naslov;
      }
 
-     .blank{
-          padding-top: 1em;
-     }
-
      .content{
+
+          max-width: 80%;
+          background: color(tamna);
+          border-radius: $project-br;
+          box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+          padding: 50px;
+          position: relative;
+          z-index: 0;
           display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
+          margin: auto;
+          margin-top: -8%;
 
-          .text-in{
-               @include text-in-container;
-               text-align: left;
-               font-size: large;
-
-               span{
-                    color: color(lj);
-               }
-          }
-
-          .box{
-               flex: 1 40%;
-               background-color: color(tlj);
+          .profile-link{
+               flex: 1 0.5 10%;
+               min-width: 200px;
+               background-color: color(lj);
                margin: 1em;
-               height: 6em;
-               border-radius: 5px;
+               height: 14em;
+               border-radius: $project-br;
+               box-shadow: inset -6px -4px 20px color(tlj);
 
                & .icon{
                     text-align: center;
                     color: color(svjetla);
-                    font-size: 3em;
+                    font-size: 8em;
                }
 
                h2{
                     color: color(svjetla);
                     text-align: center;
                     font-weight: 400;
-                    font-size: medium;
+                    font-size: xx-large;
                     font-family: "Montserrat";
                }     
           }
@@ -356,31 +212,49 @@ header{
 }
 
 #projects{
+     position: relative;
+     height: 90vh;
 
      .naslov{
           @include naslov;
      }
 
      .project-list{
-          width: 100%;
-          height: auto;
+          
+          max-width: 80%;
+          background: color(tamna);
+          border-radius: $project-br;
+          box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+          padding: 50px;
+          position: relative;
+          z-index: 0;
           display: flex;
-          flex-direction: column;
-          justify-content: space-around;
+          margin: auto;
+          margin-top: -8%;
 
-          .project{
-               margin: auto;
-               margin-top: 1em;
-               width:90%;
-               height: 20em;
-               padding: 1em;
+          .project-tile{
+               flex: 1 30%;
+               max-width: 500px;
+               height: auto;
+               min-height: 20em;
+               padding: 1% 1%;
                background-color: color(svjetla);
                border-radius: $project-br;
                text-align: center;
+               display: flex;
+               flex-flow: column;
+               justify-items: space-evenly;
+               margin: 1% 1%;
                
                img{
+                    flex: 1 50%;
                     width: 90%;
-                    margin-top: $project-br;
+                    border-radius: $project-br;
+                    margin: auto;
+               }
+
+               .project-desc{
+                    flex: 1 50%;
                }
 
                h2{
@@ -410,131 +284,655 @@ header{
                          color: inherit;
                          color: color(svjetla);
                          text-transform: uppercase;
-
                     }
                }
           }
+     }
 
-          .projects-text{
+     .projects-text{
+          font-size: 2em;
+          font-weight: normal;
+          margin-top: 1em;
+          text-align: center;
+          color: color(svjetla);
+
+          a{
+               color: color(lj);
+          }
+     }
+
+}
+
+#contact{
+
+     height: 100vh;
+     .naslov{
+          @include naslov;  
+     }
+
+     .contact-content{
+
+          max-width: 80%;
+          background: color(tamna);
+          border-radius: $project-br;
+          box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+          padding: 50px;
+          position: relative;
+          z-index: 0;
+          display: flex;
+          margin: auto;
+          margin-top: -8%;
+
+          .profile-link{
+               flex: 1 100%;
+               min-width: 200px;
+               background-color: color(lj);
+               margin: 1em;
+               height: 15em;
+               border-radius: $project-br;
+               box-shadow: inset -6px -4px 20px color(tlj);
+
+               & .icon{
+                    text-align: center;
+                    color: color(svjetla);
+                    font-size: 8em;
+               }
+
+               h2{
+                    color: color(svjetla);
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: xx-large;
+                    font-family: "Montserrat";
+               }     
                
-               @include text-in-container;
+          }
+     }
 
+     .text-in{
+          font-size: xx-large;
+          color: color(svjetla);
+          text-align: center;
+
+          span{
+               color: color(lj);
+          }
+     }
+}
+
+@media (max-width:500px){
+     
+     body{
+          margin-top: 0%;
+     }
+
+     header{
+
+          top: unset;
+          bottom: 0;
+          height: 3em;
+
+          #navbar{
+     
+          width: inherit;
+          height: inherit;
+          display: flex;
+
+               .logo-name{
+                    display: none;
+               }
+     
+               .nav__links{
+                    margin: auto;
+                    width: 100%;
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-evenly;
+                    
+                    a,
+                    a:active,
+                    a:visited{
+                         flex: 1 25%;
+                         margin: auto;
+                         transition: all 0.3s ease 0s;
+                         width: auto;
+                         font-size: 1em;
+                         font-weight: 400;
+                         color: color(svjetla);
+                         text-decoration: none;
+                         text-transform: uppercase;
+                         text-align: center;
+                    }
+
+                    .arrow{
+                         visibility: visible;
+                    }
+
+                    .home{
+                         display: none;
+                    }
+               }
+          }
+     }        
+
+     #welcome-section{
+
+          height: 100vh;
+          width: auto;
+          display: flex;
+     
+          .main-block{
+     
+               h1{
+                    font-size: 4em;
+                    
+                    .bigB{
+                         margin-left: -0.2em;
+                    }
+
+                    .dot{
+                         width: 16px;
+                         height: 16px;
+                         border-radius: 50%;
+                    }
+               }
+          }
+     }
+
+     #skills{
+          position: relative;
+
+          .naslov{
+               @include naslov;
+               font-size: 3em;
+          }
+     
+          .content{
+               margin-top: -12%;
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: space-evenly;
+     
+               .profile-link{
+                    flex: 1 30%;
+                    min-width: 80px;
+                    background-color: color(lj);
+                    margin: .2em;
+                    height: 6em;
+                    border-radius: $project-br;
+                    box-shadow: inset -3px -4px 5px color(tlj);
+     
+                    & .icon{
+                         text-align: center;
+                         color: color(svjetla);
+                         font-size: 3em;
+                    }
+     
+                    h2{
+                         color: color(svjetla);
+                         text-align: center;
+                         font-weight: 300;
+                         font-size: medium;
+                         font-family: "Montserrat";
+                    }     
+               }
+          }
+     }
+
+     #projects{
+
+          position: relative;
+          height: 180vh;
+     
+          .naslov{
+               @include naslov;
+               font-size: 3em;
+          }
+     
+          .project-list{
+
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 15px 10px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+
+               height: auto;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-evenly;
+     
+               .project-tile{
+                    width: 100%;
+                    flex: 1 100%;
+                    height: auto;
+                    min-height: 20em;
+                    background-color: color(svjetla);
+                    border-radius: $project-br;
+                    text-align: center;
+                    display: flex;
+                    flex-flow: column;
+                    justify-items: space-evenly;
+                    margin: auto;
+                    margin-bottom: 1em;
+                    
+                    img{
+                         flex: 1 50%;
+                         width: 90%;
+                         border-radius: $project-br;
+                         margin: auto;
+                         margin-top: 1em;
+                    }
+     
+                    .project-desc{
+                         flex: 1 50%;
+                    }
+     
+                    h2{
+                         color: color(tlj);
+                         text-transform: capitalize;
+                    }
+     
+                    .project-text{
+                         text-align: left;
+                         margin: 20px;
+                    }
+     
+                    .links{
+                         display: flex;
+                         justify-content: space-around;
+                         margin-top: 1em;
+                         text-decoration: none;
+     
+                         .link,
+                         .link:active,
+                         .link:visited,
+                         .link:hover{
+                              width: 8em;
+                              height: 1.4em;
+                              background-color: color(tlj);
+                              border-radius: $project-br;
+                              text-decoration: none;
+                              color: inherit;
+                              color: color(svjetla);
+                              text-transform: uppercase;
+                              margin-bottom: 1em;
+                         }
+                    }
+               }
+          }
+     
+          .projects-text{
+               font-size: 1.5em;
+               font-weight: normal;
+               margin-top: 1em;
+               text-align: center;
+               color: color(svjetla);
+     
                a{
                     color: color(lj);
-                    text-transform: uppercase;
+               }
+          }
+
+          margin-bottom: 10em;
+     
+     }
+
+     #contact{
+
+          .naslov{
+               @include naslov; 
+               font-size: 3em;
+          }
+     
+          .contact-content{
+     
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 15px 10px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+
+               display: flex;
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: space-evenly;
+     
+               .profile-link{
+                    flex: 1 20%;
+                    min-width: 80px;
+                    background-color: color(lj);
+                    margin: 0.5em;
+                    height: 8em;
+                    padding: 1em;
+                    border-radius: $project-br;
+                    box-shadow: inset -6px -4px 20px color(tlj);
+     
+                    & .icon{
+                         text-align: center;
+                         color: color(svjetla);
+                         font-size: 4em;
+                    }
+     
+                    h2{
+                         color: color(svjetla);
+                         text-align: center;
+                         font-weight: 400;
+                         font-size: 1em;
+                         font-family: "Montserrat";
+                    }     
+                    
+               }
+               margin-bottom: 1vh;
+          }
+     
+          .text-in{
+               font-size: 1em;
+               width: 90%;
+               color: color(svjetla);
+               text-align: center;
+     
+               span{
+                    color: color(lj);
                }
           }
      }
 }
 
-@media (max-width: 800px) and (min-width: 400px){
+@media (min-width:501px) and (max-width: 1024px){
 
-     $dot: 90px;
-     $project-br: 10px;
-
-     #navbar{
-          height: 3em;
-          font-size: 2em;
+     body{
+          margin-top: 0%;
      }
+
+     header{
+
+          top: unset;
+          bottom: 0;
      
+          #navbar{
+     
+          width: inherit;
+          height: inherit;
+          display: flex;
+          justify-content: space-between;
+
+               .logo-name{
+
+                    flex: 1;
+                    font-size: 1.8em;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    margin: auto;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    text-align:left;
+                    .white{
+                         color: color(svjetla);
+                    }
+               }
+     
+               .nav__links{
+
+                    flex: 4 40%;
+                    margin: auto;
+                    width: 100%;
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    a,
+                    a:active,
+                    a:visited{
+                         flex: 1 25%;
+                         transition: all 0.3s ease 0s;
+                         width: auto;
+                         display: block;
+                         font-size: 1.4em;
+                         font-weight: 500;
+                         color: color(svjetla);
+                         text-decoration: none;
+                         text-transform: uppercase;
+                         text-align: center;
+                         margin: auto;
+                    }
+
+                    .arrow{
+                         visibility: visible;
+                    }
+
+                    .home{
+                         display: none;
+                    }
+               }
+          }
+     }        
+
      #welcome-section{
 
-          grid-template-rows: .3fr 2fr 2fr;
-          
-          .logo-t1{
-               width: 60%;
-               height: 100%;
-               font-size: 4em;
-               text-align: center;
-          }
+          height: 100vh;
+          width: auto;
+          display: flex;
+     
+          .main-block{
+     
+               h1{
+                    font-size: 8em;
 
-          .logo-t2{
-               text-align: center;
-               line-height: 1em;
-               font-size: 5em;
-               letter-spacing: .15em;
-               overflow: hidden;
-          }
-     
-          .logo-t3{
-               font-size: 4em;
-               text-align: center;
-               letter-spacing: .15em;
-               line-height: 1em;
-               margin-top: 1em;
-               overflow: hidden;
-          }
-     
-          .building{
-               font-size: 12em;
-               line-height: .8em;
-               overflow: hidden;
-     
-               .ljslovo{
-                    color: color(lj);
-                    font-size: 1.2em;
+                    .bigB{
+                         margin-left: -0.15em;
+                    }
                }
-
-               .sp{
-                    display: inline-block;
-                    margin-left: 20%;
-                    overflow: hidden;
-               }
-          }
-     
-          .that{
-               font-size: 3em;
-               overflow: hidden;
-          }
-     
-          .last{
-               font-size: 8em;
-               line-height: 100px;
-               text-align: left;
-               letter-spacing: 0.1em;
-               margin-left: 20%;
-               overflow: hidden;
-          }
-     
-          .dot{
-               width: $dot;
-               height: $dot;
-               border-radius: 50%;
-               background-color: color(lj);
-               color: color(lj);
-               -webkit-text-fill-color: color(lj);
-               -webkit-text-stroke-width: 2px;
-               -webkit-text-stroke-color: color(svjetla);
-               margin-left: 80%;
-               
           }
      }
 
-     #skills, #contact{
+     #skills{
+          position: relative;
+          margin-bottom: 10vh;
 
           .naslov{
-               font-size: 4em;
-          }
-     
-          .blank{
-               padding-top: 1em;
+               @include naslov;
+               font-size: 6em;
           }
      
           .content{
+
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 50px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+
                display: flex;
                flex-wrap: wrap;
-               justify-content: space-around;
+               justify-content: space-evenly;
      
-               .text-in{
-                    font-size: x-large;
-               }
-     
-               .box{
-                    flex: 1 25%;
-                    background-color: color(tlj);
+               .profile-link{
+                    flex: 1 20%;
+                    background-color: color(lj);
+                    min-width: 200px;
                     margin: 1em;
-                    height: 12em;
+                    height: 10em;
                     border-radius: $project-br;
+                    box-shadow: inset -12px -8px 40px color(tlj);
+     
+                    & .icon{
+                         text-align: center;
+                         color: color(svjetla);
+                         font-size: 5em;
+                    }
+     
+                    h2{
+                         color: color(svjetla);
+                         text-align: center;
+                         font-weight: 400;
+                         font-size: x-large;
+                         font-family: "Montserrat";
+                    }     
+               }
+               margin-bottom: 10em;
+          }
+     }
+
+     #projects{
+
+          position: relative;
+          height: 220vh;
+     
+          .naslov{
+               @include naslov;
+               font-size: 6em;
+          }
+     
+          .project-list{
+
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 10px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+
+               width: 100%;
+               height: auto;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-evenly;
+     
+               .project-tile{
+                    flex: 1 50%;
+                    max-width: 800px;
+                    min-width: 80%;
+                    height: auto;
+                    min-height: 20em;
+                    padding: 1% 1%;
+                    background-color: color(svjetla);
+                    border-radius: $project-br;
+                    text-align: center;
+                    display: flex;
+                    flex-flow: column;
+                    justify-items: space-evenly;
+                    margin: 1em auto;
+                    
+                    img{
+                         flex: 1 50%;
+                         width: 90%;
+                         border-radius: $project-br;
+                         margin: auto;
+                         margin-top: 1em;
+                    }
+     
+                    .project-desc{
+                         flex: 1 50%;
+                         margin-top: 1em;
+                    }
+     
+                    h2{
+                         color: color(tlj);
+                         text-transform: capitalize;
+                         font-size: 4em;
+                    }
+     
+                    .project-text{
+                         text-align: left;
+                         margin: 20px;
+                         font-size: 2em;
+                    }
+     
+                    .links{
+                         display: flex;
+                         justify-content: space-around;
+                         margin: 2em;
+                         text-decoration: none;
+     
+                         .link,
+                         .link:active,
+                         .link:visited,
+                         .link:hover{
+                              width: 8em;
+                              height: 1.4em;
+                              font-size: xx-large;
+                              background-color: color(tlj);
+                              border-radius: $project-br;
+                              text-decoration: none;
+                              color: inherit;
+                              color: color(svjetla);
+                              text-transform: uppercase;
+                         }
+                    }
+               }
+          }
+     
+          .projects-text{
+               font-size: 4em;
+               font-weight: normal;
+               margin-top: 1em;
+               text-align: center;
+               color: color(svjetla);
+     
+               a{
+                    color: color(lj);
+               }
+          }
+
+          margin-bottom: 10em;
+     
+     }
+
+     #contact{
+
+          .naslov{
+               @include naslov; 
+               font-size: 6em;
+          }
+     
+          .contact-content{
+
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 50px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+     
+               width: 90%;
+               display: flex;
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: space-evenly;
+     
+               .profile-link{
+                    flex: 1 30%;
+                    min-width: 200px;
+                    background-color: color(lj);
+                    margin: 0.5em;
+                    height: 14em;
+                    padding: 1em;
+                    border-radius: $project-br;
+                    box-shadow: inset -6px -4px 20px color(tlj);
      
                     & .icon{
                          text-align: center;
@@ -546,53 +944,351 @@ header{
                          color: color(svjetla);
                          text-align: center;
                          font-weight: 400;
-                         font-size: xx-large;
+                         font-size: 2em;
+                         font-family: "Montserrat";
+                    }     
+                    
+               }
+               margin-bottom: 2vh;
+          }
+     
+          .text-in{
+               font-size: 2em;
+               font-weight: normal;
+               margin-bottom: 10vh;
+               text-align: center;
+               color: color(svjetla);
+     
+               span{
+                    color: color(lj);
+               }
+          }
+     }
+}
+
+@media (min-width:1025px) and (max-width: 1680px){
+
+     header{
+
+          position: fixed;
+          top: 0;
+          z-index: 1;
+     
+          width: 100%;
+          height: 3em;
+          background-color: color(tlj);
+     
+          #navbar{
+     
+          width: inherit;
+          height: inherit;
+          display: flex;
+          justify-content: space-evenly;
+     
+               .logo-name{
+                    flex: 3;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    margin: auto;
+                    margin-left: 10%;
+                    text-align:left;
+                    .white{
+                         color: color(svjetla);
+                    }
+               }
+     
+               .nav__links{
+                    flex: 5;
+                    margin: auto;
+                    width: 100%;
+                    list-style: none;
+                    display: flex;
+                    justify-items: right;
+                    
+                    a{
+                         flex: 1;
+                         transition: all 0.3s ease 0s;
+                         width: auto;
+                         font-size: 1.2em;
+                         font-weight: 500;
+                         color: color(svjetla);
+                         text-decoration: none;
+                         text-transform: uppercase;
+                         text-align: center;
+                         margin: auto;
+                    }
+     
+                    a:hover{
+                         color: color(tamna);
+                    }
+     
+                    .arrow{
+                         visibility: hidden;
+                    }
+               }
+          }
+     }
+     
+     #welcome-section{
+     
+          background-image: url('https://hcu.org/Resources/1c2a1348-a85f-42eb-aca4-6ba9c2b9b4ef/onlinebanking.jpg');
+          background-size: cover;
+          background-color: color(tamna);
+          background-blend-mode: multiply;
+          height: 100vh;
+          display: flex;
+     
+          .main-block{
+               width: $width-main;
+               height: $height-main;
+               margin: auto;
+               max-width: 80%;
+     
+     
+               h1{
+                    font-size: 6em;
+                    color: color(svjetla);
+                    text-align: center;
+     
+                    .bigB{
+                         color: color(lj);
+                         font-size: 2em;
+                         text-transform: uppercase;
+                    }
+                    
+                    .sites{
+                         color: color(lj);
+                         text-align: right;
+                    }
+     
+                    .that{
+                         font-size: .5em;
+                         text-align: center;
+                    }
+     
+                    .outline{
+                         color: color(svjetla);
+                         font-size: 1.2em;
+                    }
+     
+                    .dot{
+                         width: 50px;
+                         height: 50px;
+                         border-radius: 50%;
+                         background-color: color(lj);
+                         display: inline-block;
+                    }
+               }
+               
+               .hl{
+                    height: 5px;
+                    width: 100%;
+                    background-color: color(lj);
+               }
+          }
+     }
+     
+     #ski, #pro, #con{
+          height: 10vh;
+     }
+     
+     #skills{
+          position: relative;
+          height: 70vh;
+     
+          .naslov{
+               @include naslov;
+          }
+     
+          .content{
+     
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 50px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+               justify-content: space-evenly;
+     
+               .profile-link{
+                    flex: 2 0.5 40%;
+                    flex-wrap: wrap;
+                    min-width: 120px;
+                    background-color: color(lj);
+                    margin: 1em;
+                    height: 10em;
+                    border-radius: $project-br;
+                    box-shadow: inset -6px -4px 20px color(tlj);
+     
+                    & .icon{
+                         text-align: center;
+                         color: color(svjetla);
+                         font-size: 5em;
+                    }
+     
+                    h2{
+                         color: color(svjetla);
+                         text-align: center;
+                         font-weight: 400;
+                         font-size: 1.2em;
                          font-family: "Montserrat";
                     }     
                }
-               margin-bottom: 15em;
+               margin-bottom: 10em;
           }
      }
-
+     
      #projects{
-
+          position: relative;
+          height: 100vh;
+          margin-top: -14vh;
+     
           .naslov{
-               font-size: 4em;
+               @include naslov;
           }
      
           .project-list{
+               
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 50px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
      
-               .project{
-                    height: 34em;
-                    padding: 2em;
+               .project-tile{
+                    flex: 1 30%;
+                    max-width: 500px;
+                    height: auto;
+                    min-height: 20em;
+                    padding: 1% 1%;
+                    background-color: color(svjetla);
+                    border-radius: $project-br;
+                    text-align: center;
+                    display: flex;
+                    flex-flow: column;
+                    justify-items: space-evenly;
+                    margin: 1% 1%;
+                    
+                    img{
+                         flex: 1 50%;
+                         width: 90%;
+                         border-radius: $project-br;
+                         margin: auto;
+                    }
+     
+                    .project-desc{
+                         flex: 1 50%;
+                    }
      
                     h2{
                          color: color(tlj);
-                         font-size: xx-large;
+                         text-transform: capitalize;
                     }
      
                     .project-text{
                          text-align: left;
-                         font-size: x-large;
-                         margin-top: 1em;
                     }
      
                     .links{
+                         display: flex;
+                         justify-content: space-around;
+                         margin-top: 1em;
+                         text-decoration: none;
+     
                          .link,
                          .link:active,
                          .link:visited,
                          .link:hover{
-                              font-size: x-large;
                               width: 8em;
-                              height: 1.6em;
+                              height: 1.4em;
+                              background-color: color(tlj);
+                              border-radius: $project-br;
+                              text-decoration: none;
+                              color: inherit;
+                              color: color(svjetla);
+                              text-transform: uppercase;
                          }
                     }
                }
+          }
      
-               .projects-text{
-                    font-size: xx-large;
-                    margin-bottom: 5em;
+          .projects-text{
+               font-size: 2em;
+               font-weight: normal;
+               margin-top: 1em;
+               text-align: center;
+               color: color(svjetla);
+     
+               a{
+                    color: color(lj);
+               }
+          }
+     
+     }
+     
+     #contact{
+     
+          height: 100vh;
+          .naslov{
+               @include naslov;  
+          }
+     
+          .contact-content{
+     
+               max-width: 80%;
+               background: color(tamna);
+               border-radius: $project-br;
+               box-shadow: 0 0 1.2rem rgba(0,0,0, .25);
+               padding: 50px;
+               position: relative;
+               z-index: 0;
+               display: flex;
+               margin: auto;
+               margin-top: -12%;
+     
+               .profile-link{
+                    flex: 1 100%;
+                    min-width: 120px;
+                    background-color: color(lj);
+                    margin: 1em;
+                    height: 10em;
+                    border-radius: $project-br;
+                    box-shadow: inset -6px -4px 20px color(tlj);
+     
+                    & .icon{
+                         text-align: center;
+                         color: color(svjetla);
+                         font-size: 5em;
+                    }
+     
+                    h2{
+                         color: color(svjetla);
+                         text-align: center;
+                         font-weight: 400;
+                         font-size: 1.2em;
+                         font-family: "Montserrat";
+                    }     
+                    
+               }
+          }
+     
+          .text-in{
+               font-size: xx-large;
+               color: color(svjetla);
+               text-align: center;
+     
+               span{
+                    color: color(lj);
                }
           }
      }
-}*/
+}

@@ -7,84 +7,91 @@
       <title>Portfolio page</title>
 </head>
 <body>
+
      <header>
-          <h2 class="logo-name"><span class="white">vedran</span>šuštić</h2>
           <nav id="navbar">
+               <h2 class="logo-name"><span class="white">vedran</span>šuštić</h2>
                <ul class="nav__links">
+                    <a href="#welcome-section" class="home"><li>home</li></a>
                     <a href="#skills"><li>skills</li></a>
                     <a href="#projects"><li>projects</li></a>
                     <a href="#contact"><li>contact</li></a>
                     <a href="#welcome-section" class="arrow"><li><i class="fas fa-arrow-up"></i></li></a>
                </ul>
           </nav>
-     </header>    
-     <!--
+     </header>   
+
      <section id="welcome-section">
-          <h2 class="logo-t1"> ////2020 </h2>
-          <h2 class="logo-t2"> vedran </h2>
-          <h2 class="logo-t3"> sustic </h2>
-          <div class="profile-link">
-               <div class="building"><span class="ljslovo">B</span>uil-<br><span class="sp">ding</span></div>
-               <div class="sites">websites</div>
-          </div>
-          <div class="profile-link">
-               <div class="that">that</div>
-               <div class="last">last</div>
-               <div class="dot"></div>
+          <div class="main-block">
+               <h1><span class="bigB">b</span>uilding 
+                    <span class="sites">sites</span> 
+                    <div class="that">that</div>
+                    <span class="outline">last</span>
+                    <span class="dot"></span></h1>
+               <div class="hl"></div>
           </div>
      </section>
+     
+     <div id="ski">
 
-     <secton id="skills">
-          <div class="blank"></div>
+     </div>
+
+     <section id="skills">
           <h2 class="naslov">Skills</h2>
           <div class="content">     
-               <div class="box">
+               <div class="profile-link">
                     <div class="icon"><i class="fab fa-html5"></i></div>
                     <h2>HTML</h2>
                </div>
-               <div class="box">
+               <div class="profile-link">
                     <div class="icon"><i class="fab fa-css3-alt"></i></div>
                     <h2>CSS</h2>
                </div>
-               <div class="box">
+               <div class="profile-link">
                     <div class="icon"><i class="fab fa-sass"></i></div>
                     <h2>SASS</h2>
                </div>
-               <div class="box">
+               <div class="profile-link">
                     <div class="icon"><i class="fab fa-bootstrap"></i></div>
                     <h2>Bootstrap</h2>
                </div>
-               <div class="box">
+               <div class="profile-link">
                     <div class="icon"><i class="fab fa-js-square"></i></div>
                     <h2>JavaScript</h2>
                </div>
-               <div class="box">
+               <div class="profile-link">
                     <div class="icon"><i class="fab fa-react"></i></div>
                     <h2>React</h2>
                </div>
           </div>
-     </secton>
+     </section>   
+
+     <div id="pro">
+
+     </div>
 
      <section id="projects">
           <h1 class="naslov">Projects</h1>
           <div class="project-list">
                
-               <div class="project">
+               <div class="project-tile">
                     <img src="https://i.ibb.co/wdKfdLT/Screenshot-1.jpg" alt="Screenshot-1"/>
-                    <h2> ElDorado resourt </h2>
-                    <p class="project-text">
-                         React resourt app with all the programs that resourt has to 
-                         offer and preview of hotel's rooms using room filters.
-                    </p>
-                    <div class="links">
-                         <a href="https://react-eldorado-hotel-casino.netlify.app/" class="link">Website</a>
-                         <a href="https://github.com/buhtla005/10_React_ElDorado" class="link">Check code</a>
+                    <div class="project-desc">
+                         <h2 class="project-title"> ElDorado resourt </h2>
+                         <p class="project-text">
+                              React resourt app with all the programs that resourt has to 
+                              offer and preview of hotel's rooms using room filters.
+                         </p>
+                         <div class="links">
+                              <a href="https://react-eldorado-hotel-casino.netlify.app/" class="link">Website</a>
+                              <a href="https://github.com/buhtla005/10_React_ElDorado" class="link">Check code</a>
+                         </div>
                     </div>
                </div>
 
-               <div class="project">
+               <div class="project-tile">
                     <img src="https://i.ibb.co/D9NpBYM/Screenshot-4.jpg" alt="Screenshot-1"/>
-                    <h2> Admin dashboard </h2>
+                    <h2 class="project-title"> Admin dashboard </h2>
                     <p class="project-text">
                          A bootstrap project that was later transformed into functioning website using laravel.
                     </p>
@@ -94,9 +101,9 @@
                     </div>
                </div>
 
-               <div class="project">
+               <div class="project-tile">
                     <img src="https://i.ibb.co/61yP9dZ/Screenshot-5.jpg" alt="Screenshot-1"/>
-                    <h2> Consola - game dev </h2>
+                    <h2 class="project-title"> Consola - game dev </h2>
                     <p class="project-text">
                          Responsive website for imaginary game development company. It uses both bootstrap and css for styling.
                     </p>
@@ -105,49 +112,50 @@
                          <a href="https://github.com/buhtla005/Consola" class="link">Check code</a>
                     </div>
                </div>
-
-               <p class="projects-text">You can check the full list of projects <a href="https://github.com/buhtla005?tab=repositories">here.</a></p>
           </div>
+          <p class="projects-text">You can check the full list of projects <a href="https://github.com/buhtla005?tab=repositories">here.</a></p>
+     </section>
 
-          </section>
+     <div id="con">
 
-          <section id="contact" >
-               <h1 class="naslov"> Contact </h1>
-               <div class="content">
-                    <p class="text-in">You can contact me via email at <span>sustic_vedran@yahoo.com</span> and check my profiles.</p>
-                    <a href="mailto:sustic_vedran@yahoo.com" class="box">              
-                         <div class="icon"><i class="far fa-envelope-open"></i>
-                         </div>     
-                         <h2>Email</h2>
-                    </a>
+     </div>
 
-                    <a href="https://www.linkedin.com/in/vedran-sustic-726a69140/" class="box">              
-                         <div class="icon"><i class="fab fa-linkedin-in"></i>
-                         </div>     
-                         <h2>Linkedin</h2>
-                    </a>
+     <section id="contact" >
+          <h1 class="naslov"> Contact </h1>
+          <div class="contact-content">
+               <a href="mailto:sustic_vedran@yahoo.com" target="_blank" class="profile-link" id="profile-link">              
+                    <div class="icon"><i class="far fa-envelope-open"></i>
+                    </div>     
+                    <h2>Email</h2>
+               </a>
 
-                    <a href="https://github.com/buhtla005" class="box">              
-                         <div class="icon"><i class="fab fa-github"></i>
-                         </div>     
-                         <h2>Github</h2>
-                    </a>
+               <a href="https://www.linkedin.com/in/vedran-sustic-726a69140/" target="_blank" class="profile-link" id="profile-link">              
+                    <div class="icon"><i class="fab fa-linkedin-in"></i>
+                    </div>     
+                    <h2>Linkedin</h2>
+               </a>
 
-                    <a href="https://www.freecodecamp.org/vedran_sustic" class="box">              
-                         <div class="icon"><i class="fab fa-free-code-camp"></i>
-                         </div>     
-                         <h2>freeCodeCamp</h2>
-                    </a>
+               <a href="https://github.com/buhtla005" target="_blank" class="profile-link" id="profile-link">              
+                    <div class="icon"><i class="fab fa-github"></i>
+                    </div>     
+                    <h2>Github</h2>
+               </a>
 
-                    <a href="https://app.codesignal.com/profile/vedran_s2" class="box">              
-                         <div class="icon"><i class="fas fa-code"></i>
-                         </div>     
-                         <h2>CodeSignal</h2>
-                    </a>
+               <a href="https://app.codesignal.com/profile/vedran_s2" target="_blank" class="profile-link" id="profile-link">              
+                    <div class="icon"><i class="fas fa-code"></i>
+                    </div>     
+                    <h2>CodeSignal</h2>
+               </a>
 
-               </div>
-          </section>   
-     -->
+               <a href="https://www.freecodecamp.org/vedran_sustic" target="_blank" class="profile-link" id="profile-link">              
+                    <div class="icon"><i class="fab fa-free-code-camp"></i>
+                    </div>     
+                    <h2>freeCodeCamp</h2>
+               </a>
+          </div>
+          <p class="text-in">You can contact me via email at <span>sustic_vedran@yahoo.com</span> or check my profiles.</p>
+     </section> 
+             
      <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-search-pseudo-elements></script>
 </body>
 </html>

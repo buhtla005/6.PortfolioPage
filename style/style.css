@@ -11,46 +11,21 @@
 body {
   background: #3F3236;
   mix-blend-mode: normal;
-  height: 200vh;
+  margin-top: 3vh;
 }
 
 header {
   position: fixed;
+  top: 0;
+  z-index: 1;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px 10%;
+  height: 5em;
   background-color: #a80038;
 }
 
-header .logo-name {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 20%;
-          flex: 1 20%;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-header .logo-name .white {
-  color: #fbf9fa;
-}
-
 header #navbar {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 10%;
-          flex: 1 10%;
-}
-
-header #navbar .nav__links {
-  width: 100%;
-  list-style: none;
+  width: inherit;
+  height: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,15 +34,48 @@ header #navbar .nav__links {
           justify-content: space-evenly;
 }
 
+header #navbar .logo-name {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: auto;
+  margin-left: 10%;
+  text-align: left;
+}
+
+header #navbar .logo-name .white {
+  color: #fbf9fa;
+}
+
+header #navbar .nav__links {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  margin: auto;
+  width: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: right;
+}
+
 header #navbar .nav__links a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  width: auto;
+  font-size: 1.6em;
   font-weight: 500;
-  font-size: 1em;
   color: #fbf9fa;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  margin: auto;
 }
 
 header #navbar .nav__links a:hover {
@@ -78,81 +86,619 @@ header #navbar .nav__links .arrow {
   visibility: hidden;
 }
 
-@media (max-width: 400px) {
-  header {
-    bottom: 0;
-    background-color: #a80038;
-    width: 100%;
-    height: 3em;
-    padding: 0;
+#welcome-section {
+  background-image: url("https://hcu.org/Resources/1c2a1348-a85f-42eb-aca4-6ba9c2b9b4ef/onlinebanking.jpg");
+  background-size: cover;
+  background-color: #3F3236;
+  background-blend-mode: multiply;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#welcome-section .main-block {
+  width: 60%;
+  height: 95%;
+  margin: auto;
+  max-width: 80%;
+}
+
+#welcome-section .main-block h1 {
+  font-size: 10em;
+  color: #fbf9fa;
+  text-align: center;
+}
+
+#welcome-section .main-block h1 .bigB {
+  color: #fd0054;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+#welcome-section .main-block h1 .sites {
+  color: #fd0054;
+  text-align: right;
+}
+
+#welcome-section .main-block h1 .that {
+  font-size: .5em;
+  text-align: center;
+}
+
+#welcome-section .main-block h1 .outline {
+  color: #fbf9fa;
+  font-size: 1.2em;
+}
+
+#welcome-section .main-block h1 .dot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fd0054;
+  display: inline-block;
+}
+
+#welcome-section .main-block .hl {
+  height: 5px;
+  width: 100%;
+  background-color: #fd0054;
+}
+
+#ski, #pro, #con {
+  height: 10vh;
+}
+
+#skills {
+  position: relative;
+  height: 70vh;
+}
+
+#skills .naslov {
+  color: #524045;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-transform: uppercase;
+  font-size: 10em;
+  margin: .5em;
+}
+
+#skills .content {
+  max-width: 80%;
+  background: #3F3236;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  position: relative;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  margin-top: -8%;
+  margin-bottom: 10em;
+}
+
+#skills .content .profile-link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0.5 10%;
+          flex: 1 0.5 10%;
+  min-width: 200px;
+  background-color: #fd0054;
+  margin: 1em;
+  height: 14em;
+  border-radius: 10px;
+  -webkit-box-shadow: inset -6px -4px 20px #a80038;
+          box-shadow: inset -6px -4px 20px #a80038;
+}
+
+#skills .content .profile-link .icon {
+  text-align: center;
+  color: #fbf9fa;
+  font-size: 8em;
+}
+
+#skills .content .profile-link h2 {
+  color: #fbf9fa;
+  text-align: center;
+  font-weight: 400;
+  font-size: xx-large;
+  font-family: "Montserrat";
+}
+
+#projects {
+  position: relative;
+  height: 90vh;
+}
+
+#projects .naslov {
+  color: #524045;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-transform: uppercase;
+  font-size: 10em;
+  margin: .5em;
+}
+
+#projects .project-list {
+  max-width: 80%;
+  background: #3F3236;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  position: relative;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  margin-top: -8%;
+}
+
+#projects .project-list .project-tile {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 30%;
+          flex: 1 30%;
+  max-width: 500px;
+  height: auto;
+  min-height: 20em;
+  padding: 1% 1%;
+  background-color: #fbf9fa;
+  border-radius: 10px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  justify-items: space-evenly;
+  margin: 1% 1%;
+}
+
+#projects .project-list .project-tile img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 50%;
+          flex: 1 50%;
+  width: 90%;
+  border-radius: 10px;
+  margin: auto;
+}
+
+#projects .project-list .project-tile .project-desc {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 50%;
+          flex: 1 50%;
+}
+
+#projects .project-list .project-tile h2 {
+  color: #a80038;
+  text-transform: capitalize;
+}
+
+#projects .project-list .project-tile .project-text {
+  text-align: left;
+}
+
+#projects .project-list .project-tile .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+#projects .project-list .project-tile .links .link,
+#projects .project-list .project-tile .links .link:active,
+#projects .project-list .project-tile .links .link:visited,
+#projects .project-list .project-tile .links .link:hover {
+  width: 8em;
+  height: 1.4em;
+  background-color: #a80038;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  color: #fbf9fa;
+  text-transform: uppercase;
+}
+
+#projects .projects-text {
+  font-size: 2em;
+  font-weight: normal;
+  margin-top: 1em;
+  text-align: center;
+  color: #fbf9fa;
+}
+
+#projects .projects-text a {
+  color: #fd0054;
+}
+
+#contact {
+  height: 100vh;
+}
+
+#contact .naslov {
+  color: #524045;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-transform: uppercase;
+  font-size: 10em;
+  margin: .5em;
+}
+
+#contact .contact-content {
+  max-width: 80%;
+  background: #3F3236;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  position: relative;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  margin-top: -8%;
+}
+
+#contact .contact-content .profile-link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  min-width: 200px;
+  background-color: #fd0054;
+  margin: 1em;
+  height: 15em;
+  border-radius: 10px;
+  -webkit-box-shadow: inset -6px -4px 20px #a80038;
+          box-shadow: inset -6px -4px 20px #a80038;
+}
+
+#contact .contact-content .profile-link .icon {
+  text-align: center;
+  color: #fbf9fa;
+  font-size: 8em;
+}
+
+#contact .contact-content .profile-link h2 {
+  color: #fbf9fa;
+  text-align: center;
+  font-weight: 400;
+  font-size: xx-large;
+  font-family: "Montserrat";
+}
+
+#contact .text-in {
+  font-size: xx-large;
+  color: #fbf9fa;
+  text-align: center;
+}
+
+#contact .text-in span {
+  color: #fd0054;
+}
+
+@media (max-width: 500px) {
+  body {
+    margin-top: 0%;
   }
-  header .logo-name {
-    display: none;
+  header {
+    top: unset;
+    bottom: 0;
+    height: 3em;
   }
   header #navbar {
-    height: inherit;
     width: inherit;
-  }
-  header #navbar .nav__links {
-    height: 100%;
-    width: 100%;
+    height: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
-  header #navbar .nav__links a {
+  header #navbar .logo-name {
+    display: none;
+  }
+  header #navbar .nav__links {
+    margin: auto;
+    width: 100%;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  header #navbar .nav__links a,
+  header #navbar .nav__links a:active,
+  header #navbar .nav__links a:visited {
     -webkit-box-flex: 1;
         -ms-flex: 1 25%;
             flex: 1 25%;
-    height: 100%;
-    padding-top: 3%;
-    -ms-grid-column-align: center;
-        justify-self: center;
+    margin: auto;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    width: auto;
+    font-size: 1em;
     font-weight: 400;
-    font-size: 0.9em;
+    color: #fbf9fa;
     text-decoration: none;
     text-transform: uppercase;
-    color: #fbf9fa;
+    text-align: center;
   }
   header #navbar .nav__links .arrow {
     visibility: visible;
   }
-}
-
-@media (min-width: 400px) and (max-width: 800px) {
-  header {
-    bottom: 0;
-    background-color: #a80038;
+  header #navbar .nav__links .home {
+    display: none;
+  }
+  #welcome-section {
+    height: 100vh;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #welcome-section .main-block h1 {
+    font-size: 4em;
+  }
+  #welcome-section .main-block h1 .bigB {
+    margin-left: -0.2em;
+  }
+  #welcome-section .main-block h1 .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  #skills {
+    position: relative;
+  }
+  #skills .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+    font-size: 3em;
+  }
+  #skills .content {
+    margin-top: -12%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #skills .content .profile-link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 30%;
+            flex: 1 30%;
+    min-width: 80px;
+    background-color: #fd0054;
+    margin: .2em;
+    height: 6em;
+    border-radius: 10px;
+    -webkit-box-shadow: inset -3px -4px 5px #a80038;
+            box-shadow: inset -3px -4px 5px #a80038;
+  }
+  #skills .content .profile-link .icon {
+    text-align: center;
+    color: #fbf9fa;
+    font-size: 3em;
+  }
+  #skills .content .profile-link h2 {
+    color: #fbf9fa;
+    text-align: center;
+    font-weight: 300;
+    font-size: medium;
+    font-family: "Montserrat";
+  }
+  #projects {
+    position: relative;
+    height: 180vh;
+    margin-bottom: 10em;
+  }
+  #projects .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+    font-size: 3em;
+  }
+  #projects .project-list {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 15px 10px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+    height: auto;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #projects .project-list .project-tile {
     width: 100%;
-    height: 5em;
-    padding: 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 100%;
+            flex: 1 100%;
+    height: auto;
+    min-height: 20em;
+    background-color: #fbf9fa;
+    border-radius: 10px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    justify-items: space-evenly;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+  #projects .project-list .project-tile img {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 1em;
+  }
+  #projects .project-list .project-tile .project-desc {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+  }
+  #projects .project-list .project-tile h2 {
+    color: #a80038;
+    text-transform: capitalize;
+  }
+  #projects .project-list .project-tile .project-text {
+    text-align: left;
+    margin: 20px;
+  }
+  #projects .project-list .project-tile .links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    margin-top: 1em;
+    text-decoration: none;
   }
-  header .logo-name {
+  #projects .project-list .project-tile .links .link,
+  #projects .project-list .project-tile .links .link:active,
+  #projects .project-list .project-tile .links .link:visited,
+  #projects .project-list .project-tile .links .link:hover {
+    width: 8em;
+    height: 1.4em;
+    background-color: #a80038;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    color: #fbf9fa;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+  #projects .projects-text {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 1em;
+    text-align: center;
+    color: #fbf9fa;
+  }
+  #projects .projects-text a {
+    color: #fd0054;
+  }
+  #contact .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+    font-size: 3em;
+  }
+  #contact .contact-content {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 15px 10px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 1vh;
+  }
+  #contact .contact-content .profile-link {
     -webkit-box-flex: 1;
-        -ms-flex: 1 10%;
-            flex: 1 10%;
-    margin-left: 10%;
+        -ms-flex: 1 20%;
+            flex: 1 20%;
+    min-width: 80px;
+    background-color: #fd0054;
+    margin: 0.5em;
+    height: 8em;
+    padding: 1em;
+    border-radius: 10px;
+    -webkit-box-shadow: inset -6px -4px 20px #a80038;
+            box-shadow: inset -6px -4px 20px #a80038;
+  }
+  #contact .contact-content .profile-link .icon {
+    text-align: center;
+    color: #fbf9fa;
+    font-size: 4em;
+  }
+  #contact .contact-content .profile-link h2 {
+    color: #fbf9fa;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1em;
+    font-family: "Montserrat";
+  }
+  #contact .text-in {
+    font-size: 1em;
+    width: 90%;
+    color: #fbf9fa;
+    text-align: center;
+  }
+  #contact .text-in span {
+    color: #fd0054;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  body {
+    margin-top: 0%;
+  }
+  header {
+    top: unset;
+    bottom: 0;
   }
   header #navbar {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 50%;
-            flex: 1 50%;
-    height: inherit;
     width: inherit;
-  }
-  header #navbar .nav__links {
-    height: 100%;
-    width: 100%;
+    height: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -160,449 +706,656 @@ header #navbar .nav__links .arrow {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  header #navbar .nav__links a {
+  header #navbar .logo-name {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 1.8em;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+  }
+  header #navbar .logo-name .white {
+    color: #fbf9fa;
+  }
+  header #navbar .nav__links {
+    -webkit-box-flex: 4;
+        -ms-flex: 4 40%;
+            flex: 4 40%;
+    margin: auto;
+    width: 100%;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header #navbar .nav__links a,
+  header #navbar .nav__links a:active,
+  header #navbar .nav__links a:visited {
     -webkit-box-flex: 1;
         -ms-flex: 1 25%;
             flex: 1 25%;
-    height: 100%;
-    padding-top: 5%;
-    -ms-grid-column-align: center;
-        justify-self: center;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    font-weight: 400;
+    width: auto;
+    display: block;
     font-size: 1.4em;
+    font-weight: 500;
+    color: #fbf9fa;
     text-decoration: none;
     text-transform: uppercase;
-    color: #fbf9fa;
+    text-align: center;
+    margin: auto;
   }
   header #navbar .nav__links .arrow {
     visibility: visible;
   }
+  header #navbar .nav__links .home {
+    display: none;
+  }
+  #welcome-section {
+    height: 100vh;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #welcome-section .main-block h1 {
+    font-size: 8em;
+  }
+  #welcome-section .main-block h1 .bigB {
+    margin-left: -0.15em;
+  }
+  #skills {
+    position: relative;
+    margin-bottom: 10vh;
+  }
+  #skills .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+    font-size: 6em;
+  }
+  #skills .content {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 50px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 10em;
+  }
+  #skills .content .profile-link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 20%;
+            flex: 1 20%;
+    background-color: #fd0054;
+    min-width: 200px;
+    margin: 1em;
+    height: 10em;
+    border-radius: 10px;
+    -webkit-box-shadow: inset -12px -8px 40px #a80038;
+            box-shadow: inset -12px -8px 40px #a80038;
+  }
+  #skills .content .profile-link .icon {
+    text-align: center;
+    color: #fbf9fa;
+    font-size: 5em;
+  }
+  #skills .content .profile-link h2 {
+    color: #fbf9fa;
+    text-align: center;
+    font-weight: 400;
+    font-size: x-large;
+    font-family: "Montserrat";
+  }
+  #projects {
+    position: relative;
+    height: 220vh;
+    margin-bottom: 10em;
+  }
+  #projects .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+    font-size: 6em;
+  }
+  #projects .project-list {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #projects .project-list .project-tile {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+    max-width: 800px;
+    min-width: 80%;
+    height: auto;
+    min-height: 20em;
+    padding: 1% 1%;
+    background-color: #fbf9fa;
+    border-radius: 10px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    justify-items: space-evenly;
+    margin: 1em auto;
+  }
+  #projects .project-list .project-tile img {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 1em;
+  }
+  #projects .project-list .project-tile .project-desc {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+    margin-top: 1em;
+  }
+  #projects .project-list .project-tile h2 {
+    color: #a80038;
+    text-transform: capitalize;
+    font-size: 4em;
+  }
+  #projects .project-list .project-tile .project-text {
+    text-align: left;
+    margin: 20px;
+    font-size: 2em;
+  }
+  #projects .project-list .project-tile .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 2em;
+    text-decoration: none;
+  }
+  #projects .project-list .project-tile .links .link,
+  #projects .project-list .project-tile .links .link:active,
+  #projects .project-list .project-tile .links .link:visited,
+  #projects .project-list .project-tile .links .link:hover {
+    width: 8em;
+    height: 1.4em;
+    font-size: xx-large;
+    background-color: #a80038;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    color: #fbf9fa;
+    text-transform: uppercase;
+  }
+  #projects .projects-text {
+    font-size: 4em;
+    font-weight: normal;
+    margin-top: 1em;
+    text-align: center;
+    color: #fbf9fa;
+  }
+  #projects .projects-text a {
+    color: #fd0054;
+  }
+  #contact .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+    font-size: 6em;
+  }
+  #contact .contact-content {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 50px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+    width: 90%;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 2vh;
+  }
+  #contact .contact-content .profile-link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 30%;
+            flex: 1 30%;
+    min-width: 200px;
+    background-color: #fd0054;
+    margin: 0.5em;
+    height: 14em;
+    padding: 1em;
+    border-radius: 10px;
+    -webkit-box-shadow: inset -6px -4px 20px #a80038;
+            box-shadow: inset -6px -4px 20px #a80038;
+  }
+  #contact .contact-content .profile-link .icon {
+    text-align: center;
+    color: #fbf9fa;
+    font-size: 6em;
+  }
+  #contact .contact-content .profile-link h2 {
+    color: #fbf9fa;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2em;
+    font-family: "Montserrat";
+  }
+  #contact .text-in {
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 10vh;
+    text-align: center;
+    color: #fbf9fa;
+  }
+  #contact .text-in span {
+    color: #fd0054;
+  }
 }
 
-/*
-#welcome-section{
-     display: grid;
-     width: 100%;
-     height: 100vh;
-     grid-template-areas:
-     "v v"
-     "t s"
-     "t g";
-     grid-template-columns: 3.6fr .4fr;
-     grid-template-rows: .2fr 2fr 2fr;
-
-     .logo-t1{
-          grid-area: v;
-          width: 210px;
-          height: 56px;
-
-          color: color(tamna);
-          background-color: color(tlj);
-          
-          font-style: normal;
-          font-weight: normal;
-          font-size: 48px;
-          line-height: 56px;
-          letter-spacing: .025em;
-          justify-self: end;
-     }
-
-     .logo-t2{
-          grid-area: s;
-          font-style: normal;
-          font-weight: bold;
-          text-align: center;
-          line-height: 56px;
-          letter-spacing: 0.025em;
-          color: color(svjetla);
-          background-color: color(tlj);
-          font-size: 3em;
-          writing-mode: vertical-lr;
-          letter-spacing: .15em;
-          text-transform: uppercase;
-     }
-
-     .logo-t3{
-          grid-area: g;
-          width:56px;
-          height:267px;
-          color: color(tlj);
-          background-color: color(tamna);
-
-          font-size: 3em;
-          align-items: center;
-          text-align: center;
-          writing-mode: vertical-lr;
-          letter-spacing: .025em;
-          text-transform: uppercase;
-     }
-
-     .building{
-          color: color(svjetla);
-          font-style: normal;
-          font-weight: bold;
-          font-size: 96px;
-          line-height: 100%;
-          text-transform: uppercase;
-          letter-spacing: -0.09em;
-          font-feature-settings: 'kern' off;
-          margin-left: .51em;
-          margin-top: .2em;
-          overflow: hidden;
-
-          .ljslovo{
-               color: color(lj);
-          }
-     }
-
-     .sites{
-          font-style: italic;
-          font-weight: normal;
-          font-size: 2.5em;
-          line-height: auto;
-          text-align: center;
-          letter-spacing: 0.165em;
-          margin-top: 0.5em;
-          color: color(svjetla);
-          text-transform: uppercase;
-     }
-
-     .that{
-          font-style: normal;
-          font-weight: bold;
-          font-size: 2em;
-          line-height: 42px;
-          text-align: center;
-          letter-spacing: 0.025em;
-          color: color(svjetla);
-          margin-top: 1em;
-     }
-
-     .last{
-          font-family: Montserrat;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 5em;
-          line-height: 88px;
-          text-align: center;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          color: color(tamna);
-          -webkit-text-fill-color: color(tamna);
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: color(svjetla);
-          margin-top: .5em;
-          margin-left: .1em;
-          overflow: hidden;
-     }
-
-     .dot{
-          margin-top: -1em;
-          margin-left: 85%;
-          width: $dot;
-          height: $dot;
-          border-radius: 50%;
-          background-color: color(lj);
-          color: color(lj);
-          -webkit-text-fill-color: color(lj);
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: color(svjetla);
-          
-     }
+@media (min-width: 1025px) and (max-width: 1680px) {
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 3em;
+    background-color: #a80038;
+  }
+  header #navbar {
+    width: inherit;
+    height: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  header #navbar .logo-name {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: auto;
+    margin-left: 10%;
+    text-align: left;
+  }
+  header #navbar .logo-name .white {
+    color: #fbf9fa;
+  }
+  header #navbar .nav__links {
+    -webkit-box-flex: 5;
+        -ms-flex: 5;
+            flex: 5;
+    margin: auto;
+    width: 100%;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: right;
+  }
+  header #navbar .nav__links a {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fbf9fa;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+  }
+  header #navbar .nav__links a:hover {
+    color: #3F3236;
+  }
+  header #navbar .nav__links .arrow {
+    visibility: hidden;
+  }
+  #welcome-section {
+    background-image: url("https://hcu.org/Resources/1c2a1348-a85f-42eb-aca4-6ba9c2b9b4ef/onlinebanking.jpg");
+    background-size: cover;
+    background-color: #3F3236;
+    background-blend-mode: multiply;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #welcome-section .main-block {
+    width: 60%;
+    height: 95%;
+    margin: auto;
+    max-width: 80%;
+  }
+  #welcome-section .main-block h1 {
+    font-size: 6em;
+    color: #fbf9fa;
+    text-align: center;
+  }
+  #welcome-section .main-block h1 .bigB {
+    color: #fd0054;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  #welcome-section .main-block h1 .sites {
+    color: #fd0054;
+    text-align: right;
+  }
+  #welcome-section .main-block h1 .that {
+    font-size: .5em;
+    text-align: center;
+  }
+  #welcome-section .main-block h1 .outline {
+    color: #fbf9fa;
+    font-size: 1.2em;
+  }
+  #welcome-section .main-block h1 .dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fd0054;
+    display: inline-block;
+  }
+  #welcome-section .main-block .hl {
+    height: 5px;
+    width: 100%;
+    background-color: #fd0054;
+  }
+  #ski, #pro, #con {
+    height: 10vh;
+  }
+  #skills {
+    position: relative;
+    height: 70vh;
+  }
+  #skills .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+  }
+  #skills .content {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 50px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 10em;
+  }
+  #skills .content .profile-link {
+    -webkit-box-flex: 2;
+        -ms-flex: 2 0.5 40%;
+            flex: 2 0.5 40%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    min-width: 120px;
+    background-color: #fd0054;
+    margin: 1em;
+    height: 10em;
+    border-radius: 10px;
+    -webkit-box-shadow: inset -6px -4px 20px #a80038;
+            box-shadow: inset -6px -4px 20px #a80038;
+  }
+  #skills .content .profile-link .icon {
+    text-align: center;
+    color: #fbf9fa;
+    font-size: 5em;
+  }
+  #skills .content .profile-link h2 {
+    color: #fbf9fa;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-family: "Montserrat";
+  }
+  #projects {
+    position: relative;
+    height: 100vh;
+    margin-top: -14vh;
+  }
+  #projects .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+  }
+  #projects .project-list {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 50px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+  }
+  #projects .project-list .project-tile {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 30%;
+            flex: 1 30%;
+    max-width: 500px;
+    height: auto;
+    min-height: 20em;
+    padding: 1% 1%;
+    background-color: #fbf9fa;
+    border-radius: 10px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    justify-items: space-evenly;
+    margin: 1% 1%;
+  }
+  #projects .project-list .project-tile img {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+  }
+  #projects .project-list .project-tile .project-desc {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 50%;
+            flex: 1 50%;
+  }
+  #projects .project-list .project-tile h2 {
+    color: #a80038;
+    text-transform: capitalize;
+  }
+  #projects .project-list .project-tile .project-text {
+    text-align: left;
+  }
+  #projects .project-list .project-tile .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: 1em;
+    text-decoration: none;
+  }
+  #projects .project-list .project-tile .links .link,
+  #projects .project-list .project-tile .links .link:active,
+  #projects .project-list .project-tile .links .link:visited,
+  #projects .project-list .project-tile .links .link:hover {
+    width: 8em;
+    height: 1.4em;
+    background-color: #a80038;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    color: #fbf9fa;
+    text-transform: uppercase;
+  }
+  #projects .projects-text {
+    font-size: 2em;
+    font-weight: normal;
+    margin-top: 1em;
+    text-align: center;
+    color: #fbf9fa;
+  }
+  #projects .projects-text a {
+    color: #fd0054;
+  }
+  #contact {
+    height: 100vh;
+  }
+  #contact .naslov {
+    color: #524045;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-transform: uppercase;
+    font-size: 10em;
+    margin: .5em;
+  }
+  #contact .contact-content {
+    max-width: 80%;
+    background: #3F3236;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
+    padding: 50px;
+    position: relative;
+    z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: -12%;
+  }
+  #contact .contact-content .profile-link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 100%;
+            flex: 1 100%;
+    min-width: 120px;
+    background-color: #fd0054;
+    margin: 1em;
+    height: 10em;
+    border-radius: 10px;
+    -webkit-box-shadow: inset -6px -4px 20px #a80038;
+            box-shadow: inset -6px -4px 20px #a80038;
+  }
+  #contact .contact-content .profile-link .icon {
+    text-align: center;
+    color: #fbf9fa;
+    font-size: 5em;
+  }
+  #contact .contact-content .profile-link h2 {
+    color: #fbf9fa;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-family: "Montserrat";
+  }
+  #contact .text-in {
+    font-size: xx-large;
+    color: #fbf9fa;
+    text-align: center;
+  }
+  #contact .text-in span {
+    color: #fd0054;
+  }
 }
-
-
-#skills, #contact{
-
-     .naslov{
-          @include naslov;
-     }
-
-     .blank{
-          padding-top: 1em;
-     }
-
-     .content{
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-
-          .text-in{
-               @include text-in-container;
-               text-align: left;
-               font-size: large;
-
-               span{
-                    color: color(lj);
-               }
-          }
-
-          .box{
-               flex: 1 40%;
-               background-color: color(tlj);
-               margin: 1em;
-               height: 6em;
-               border-radius: 5px;
-
-               & .icon{
-                    text-align: center;
-                    color: color(svjetla);
-                    font-size: 3em;
-               }
-
-               h2{
-                    color: color(svjetla);
-                    text-align: center;
-                    font-weight: 400;
-                    font-size: medium;
-                    font-family: "Montserrat";
-               }     
-          }
-          margin-bottom: 10em;
-     }
-}
-
-#projects{
-
-     .naslov{
-          @include naslov;
-     }
-
-     .project-list{
-          width: 100%;
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-
-          .project{
-               margin: auto;
-               margin-top: 1em;
-               width:90%;
-               height: 20em;
-               padding: 1em;
-               background-color: color(svjetla);
-               border-radius: $project-br;
-               text-align: center;
-               
-               img{
-                    width: 90%;
-                    margin-top: $project-br;
-               }
-
-               h2{
-                    color: color(tlj);
-                    text-transform: capitalize;
-               }
-
-               .project-text{
-                    text-align: left;
-               }
-
-               .links{
-                    display: flex;
-                    justify-content: space-around;
-                    margin-top: 1em;
-                    text-decoration: none;
-
-                    .link,
-                    .link:active,
-                    .link:visited,
-                    .link:hover{
-                         width: 8em;
-                         height: 1.4em;
-                         background-color: color(tlj);
-                         border-radius: $project-br;
-                         text-decoration: none;
-                         color: inherit;
-                         color: color(svjetla);
-                         text-transform: uppercase;
-
-                    }
-               }
-          }
-
-          .projects-text{
-               
-               @include text-in-container;
-
-               a{
-                    color: color(lj);
-                    text-transform: uppercase;
-               }
-          }
-     }
-}
-
-@media (max-width: 800px) and (min-width: 400px){
-
-     $dot: 90px;
-     $project-br: 10px;
-
-     #navbar{
-          height: 3em;
-          font-size: 2em;
-     }
-     
-     #welcome-section{
-
-          grid-template-rows: .3fr 2fr 2fr;
-          
-          .logo-t1{
-               width: 60%;
-               height: 100%;
-               font-size: 4em;
-               text-align: center;
-          }
-
-          .logo-t2{
-               text-align: center;
-               line-height: 1em;
-               font-size: 5em;
-               letter-spacing: .15em;
-               overflow: hidden;
-          }
-     
-          .logo-t3{
-               font-size: 4em;
-               text-align: center;
-               letter-spacing: .15em;
-               line-height: 1em;
-               margin-top: 1em;
-               overflow: hidden;
-          }
-     
-          .building{
-               font-size: 12em;
-               line-height: .8em;
-               overflow: hidden;
-     
-               .ljslovo{
-                    color: color(lj);
-                    font-size: 1.2em;
-               }
-
-               .sp{
-                    display: inline-block;
-                    margin-left: 20%;
-                    overflow: hidden;
-               }
-          }
-     
-          .that{
-               font-size: 3em;
-               overflow: hidden;
-          }
-     
-          .last{
-               font-size: 8em;
-               line-height: 100px;
-               text-align: left;
-               letter-spacing: 0.1em;
-               margin-left: 20%;
-               overflow: hidden;
-          }
-     
-          .dot{
-               width: $dot;
-               height: $dot;
-               border-radius: 50%;
-               background-color: color(lj);
-               color: color(lj);
-               -webkit-text-fill-color: color(lj);
-               -webkit-text-stroke-width: 2px;
-               -webkit-text-stroke-color: color(svjetla);
-               margin-left: 80%;
-               
-          }
-     }
-
-     #skills, #contact{
-
-          .naslov{
-               font-size: 4em;
-          }
-     
-          .blank{
-               padding-top: 1em;
-          }
-     
-          .content{
-               display: flex;
-               flex-wrap: wrap;
-               justify-content: space-around;
-     
-               .text-in{
-                    font-size: x-large;
-               }
-     
-               .box{
-                    flex: 1 25%;
-                    background-color: color(tlj);
-                    margin: 1em;
-                    height: 12em;
-                    border-radius: $project-br;
-     
-                    & .icon{
-                         text-align: center;
-                         color: color(svjetla);
-                         font-size: 6em;
-                    }
-     
-                    h2{
-                         color: color(svjetla);
-                         text-align: center;
-                         font-weight: 400;
-                         font-size: xx-large;
-                         font-family: "Montserrat";
-                    }     
-               }
-               margin-bottom: 15em;
-          }
-     }
-
-     #projects{
-
-          .naslov{
-               font-size: 4em;
-          }
-     
-          .project-list{
-     
-               .project{
-                    height: 34em;
-                    padding: 2em;
-     
-                    h2{
-                         color: color(tlj);
-                         font-size: xx-large;
-                    }
-     
-                    .project-text{
-                         text-align: left;
-                         font-size: x-large;
-                         margin-top: 1em;
-                    }
-     
-                    .links{
-                         .link,
-                         .link:active,
-                         .link:visited,
-                         .link:hover{
-                              font-size: x-large;
-                              width: 8em;
-                              height: 1.6em;
-                         }
-                    }
-               }
-     
-               .projects-text{
-                    font-size: xx-large;
-                    margin-bottom: 5em;
-               }
-          }
-     }
-}*/
 /*# sourceMappingURL=style.css.map */
